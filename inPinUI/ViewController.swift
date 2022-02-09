@@ -17,10 +17,20 @@ class ViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDeleg
         super.viewDidLoad()
         mapView.isMyLocationEnabled = true
         mapView.delegate = self
-
+        
         //Location Manager code to fetch current location
         self.locationManager.delegate = self
         self.locationManager.startUpdatingLocation()
+        let nameResults = ["x", "y", "z"]
+        let positionResults = [[40.758896,-73.985130],[40.753742,-73.983559],[40.763186,-73.994508]]
+        var i = 0
+        for pos in positionResults {
+            let position = CLLocationCoordinate2D(latitude: pos[0], longitude: pos[1])
+            let marker = GMSMarker(position: position)
+            marker.title = nameResults[i]
+            marker.map = mapView
+            i+=1
+        }
     }
 
     //Location Manager delegates
