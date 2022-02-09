@@ -28,6 +28,8 @@ class ViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDeleg
             let position = CLLocationCoordinate2D(latitude: pos[0], longitude: pos[1])
             let marker = GMSMarker(position: position)
             marker.title = nameResults[i]
+            marker.icon = UIImage(named: "hot")
+            marker.setIconSize(scaledToSize: .init(width: 25, height: 40))
             marker.map = mapView
             i+=1
         }
