@@ -15,6 +15,10 @@
 		E6A265DC2793341300AA001A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6A265DA2793341300AA001A /* Main.storyboard */; };
 		E6A265DE2793341400AA001A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6A265DD2793341400AA001A /* Assets.xcassets */; };
 		E6A265E12793341400AA001A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6A265DF2793341400AA001A /* LaunchScreen.storyboard */; };
+		E6FD1E9A27F388D0001BE877 /* MapConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FD1E9927F388D0001BE877 /* MapConstants.swift */; };
+		E6FD1E9D27F3963A001BE877 /* APIRequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FD1E9C27F3963A001BE877 /* APIRequestService.swift */; };
+		E6FD1EA027F39F9E001BE877 /* Restaurants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FD1E9F27F39F9E001BE877 /* Restaurants.swift */; };
+		E6FD1EA227F3A5BE001BE877 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FD1EA127F3A5BE001BE877 /* Location.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +33,10 @@
 		E6A265DD2793341400AA001A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E6A265E02793341400AA001A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E6A265E22793341400AA001A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E6FD1E9927F388D0001BE877 /* MapConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapConstants.swift; sourceTree = "<group>"; };
+		E6FD1E9C27F3963A001BE877 /* APIRequestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestService.swift; sourceTree = "<group>"; };
+		E6FD1E9F27F39F9E001BE877 /* Restaurants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurants.swift; sourceTree = "<group>"; };
+		E6FD1EA127F3A5BE001BE877 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		E8563659549096F3415BD756 /* Pods-inPinUI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-inPinUI.release.xcconfig"; path = "Target Support Files/Pods-inPinUI/Pods-inPinUI.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,6 +90,9 @@
 		E6A265D32793341300AA001A /* inPinUI */ = {
 			isa = PBXGroup;
 			children = (
+				E6FD1E9E27F39F74001BE877 /* Models */,
+				E6FD1E9B27F39609001BE877 /* Services */,
+				E6FD1E9827F388B0001BE877 /* Constants */,
 				E6A265D42793341300AA001A /* AppDelegate.swift */,
 				E6A265D62793341300AA001A /* SceneDelegate.swift */,
 				E6A265D82793341300AA001A /* ViewController.swift */,
@@ -92,6 +103,31 @@
 				E6A265E22793341400AA001A /* Info.plist */,
 			);
 			path = inPinUI;
+			sourceTree = "<group>";
+		};
+		E6FD1E9827F388B0001BE877 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				E6FD1E9927F388D0001BE877 /* MapConstants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		E6FD1E9B27F39609001BE877 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				E6FD1E9C27F3963A001BE877 /* APIRequestService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		E6FD1E9E27F39F74001BE877 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E6FD1E9F27F39F9E001BE877 /* Restaurants.swift */,
+				E6FD1EA127F3A5BE001BE877 /* Location.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,10 +245,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6FD1E9A27F388D0001BE877 /* MapConstants.swift in Sources */,
 				E6A265D92793341300AA001A /* ViewController.swift in Sources */,
+				E6FD1EA227F3A5BE001BE877 /* Location.swift in Sources */,
 				E6A265D52793341300AA001A /* AppDelegate.swift in Sources */,
 				E6083CF42794554600E5A5BF /* UIView+Extensions.swift in Sources */,
+				E6FD1E9D27F3963A001BE877 /* APIRequestService.swift in Sources */,
 				E6A265D72793341300AA001A /* SceneDelegate.swift in Sources */,
+				E6FD1EA027F39F9E001BE877 /* Restaurants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,8 +402,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9958D2UM6K;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = inPinUI/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Allow location";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -374,7 +416,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.inpin.inPinUI;
+				PRODUCT_BUNDLE_IDENTIFIER = com.inpin.inPinUI1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -390,8 +432,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9958D2UM6K;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = inPinUI/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Allow location";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -402,7 +446,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.inpin.inPinUI;
+				PRODUCT_BUNDLE_IDENTIFIER = com.inpin.inPinUI1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
