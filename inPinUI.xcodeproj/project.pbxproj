@@ -11,6 +11,14 @@
 		E6083CF42794554600E5A5BF /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6083CF32794554600E5A5BF /* UIView+Extensions.swift */; };
 		E632BD80280DED0C009E21A7 /* MockDataConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E632BD7F280DED0C009E21A7 /* MockDataConstants.swift */; };
 		E632BD82280DEDB9009E21A7 /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E632BD81280DEDB9009E21A7 /* HelperFunctions.swift */; };
+		E632BD84281082C9009E21A7 /* ThemeConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E632BD83281082C9009E21A7 /* ThemeConstants.swift */; };
+		E632BD862815CE92009E21A7 /* RestaurantCards.xib in Resources */ = {isa = PBXBuildFile; fileRef = E632BD852815CE92009E21A7 /* RestaurantCards.xib */; };
+		E632BD882815CFCB009E21A7 /* Test.xib in Resources */ = {isa = PBXBuildFile; fileRef = E632BD872815CFCB009E21A7 /* Test.xib */; };
+		E632BD8D2815D1D0009E21A7 /* RestaurantCardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E632BD8C2815D1D0009E21A7 /* RestaurantCardsView.swift */; };
+		E632BD922815D405009E21A7 /* RestauarantCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E632BD912815D405009E21A7 /* RestauarantCard.swift */; };
+		E632BD962815D442009E21A7 /* RestaurantCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = E632BD952815D442009E21A7 /* RestaurantCard.xib */; };
+		E632BD992815DA16009E21A7 /* IndividualRestaurantViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E632BD982815DA16009E21A7 /* IndividualRestaurantViewModel.swift */; };
+		E632BD9C2815E308009E21A7 /* GMSMarkerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E632BD9B2815E308009E21A7 /* GMSMarkerExtension.swift */; };
 		E6A265D52793341300AA001A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A265D42793341300AA001A /* AppDelegate.swift */; };
 		E6A265D72793341300AA001A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A265D62793341300AA001A /* SceneDelegate.swift */; };
 		E6A265D92793341300AA001A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A265D82793341300AA001A /* ViewController.swift */; };
@@ -29,6 +37,14 @@
 		E6083CF32794554600E5A5BF /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		E632BD7F280DED0C009E21A7 /* MockDataConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataConstants.swift; sourceTree = "<group>"; };
 		E632BD81280DEDB9009E21A7 /* HelperFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
+		E632BD83281082C9009E21A7 /* ThemeConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeConstants.swift; sourceTree = "<group>"; };
+		E632BD852815CE92009E21A7 /* RestaurantCards.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RestaurantCards.xib; sourceTree = "<group>"; };
+		E632BD872815CFCB009E21A7 /* Test.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Test.xib; sourceTree = "<group>"; };
+		E632BD8C2815D1D0009E21A7 /* RestaurantCardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantCardsView.swift; sourceTree = "<group>"; };
+		E632BD912815D405009E21A7 /* RestauarantCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestauarantCard.swift; sourceTree = "<group>"; };
+		E632BD952815D442009E21A7 /* RestaurantCard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RestaurantCard.xib; sourceTree = "<group>"; };
+		E632BD982815DA16009E21A7 /* IndividualRestaurantViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndividualRestaurantViewModel.swift; sourceTree = "<group>"; };
+		E632BD9B2815E308009E21A7 /* GMSMarkerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMSMarkerExtension.swift; sourceTree = "<group>"; };
 		E6A265D12793341300AA001A /* inPinUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = inPinUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6A265D42793341300AA001A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E6A265D62793341300AA001A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +89,41 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		E632BD892815D123009E21A7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E632BD972815D54B009E21A7 /* RestaurantCardsContainer */,
+				E632BD8E2815D3D1009E21A7 /* RestaurantCard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E632BD8E2815D3D1009E21A7 /* RestaurantCard */ = {
+			isa = PBXGroup;
+			children = (
+				E632BD912815D405009E21A7 /* RestauarantCard.swift */,
+				E632BD952815D442009E21A7 /* RestaurantCard.xib */,
+			);
+			path = RestaurantCard;
+			sourceTree = "<group>";
+		};
+		E632BD972815D54B009E21A7 /* RestaurantCardsContainer */ = {
+			isa = PBXGroup;
+			children = (
+				E632BD852815CE92009E21A7 /* RestaurantCards.xib */,
+				E632BD8C2815D1D0009E21A7 /* RestaurantCardsView.swift */,
+			);
+			path = RestaurantCardsContainer;
+			sourceTree = "<group>";
+		};
+		E632BD9A2815E2F5009E21A7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E632BD9B2815E308009E21A7 /* GMSMarkerExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		E6A265C82793341300AA001A = {
 			isa = PBXGroup;
 			children = (
@@ -94,9 +145,11 @@
 		E6A265D32793341300AA001A /* inPinUI */ = {
 			isa = PBXGroup;
 			children = (
+				E632BD9A2815E2F5009E21A7 /* Extensions */,
 				E6FD1E9E27F39F74001BE877 /* Models */,
 				E6FD1E9B27F39609001BE877 /* Services */,
 				E6FD1E9827F388B0001BE877 /* Constants */,
+				E632BD892815D123009E21A7 /* Views */,
 				E6A265D42793341300AA001A /* AppDelegate.swift */,
 				E6A265D62793341300AA001A /* SceneDelegate.swift */,
 				E6A265D82793341300AA001A /* ViewController.swift */,
@@ -105,6 +158,7 @@
 				E6A265DD2793341400AA001A /* Assets.xcassets */,
 				E6A265DF2793341400AA001A /* LaunchScreen.storyboard */,
 				E6A265E22793341400AA001A /* Info.plist */,
+				E632BD872815CFCB009E21A7 /* Test.xib */,
 			);
 			path = inPinUI;
 			sourceTree = "<group>";
@@ -114,6 +168,7 @@
 			children = (
 				E6FD1E9927F388D0001BE877 /* MapConstants.swift */,
 				E632BD7F280DED0C009E21A7 /* MockDataConstants.swift */,
+				E632BD83281082C9009E21A7 /* ThemeConstants.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -132,6 +187,7 @@
 			children = (
 				E6FD1E9F27F39F9E001BE877 /* Restaurants.swift */,
 				E6FD1EA127F3A5BE001BE877 /* Location.swift */,
+				E632BD982815DA16009E21A7 /* IndividualRestaurantViewModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -197,7 +253,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6A265E12793341400AA001A /* LaunchScreen.storyboard in Resources */,
+				E632BD882815CFCB009E21A7 /* Test.xib in Resources */,
 				E6A265DE2793341400AA001A /* Assets.xcassets in Resources */,
+				E632BD862815CE92009E21A7 /* RestaurantCards.xib in Resources */,
+				E632BD962815D442009E21A7 /* RestaurantCard.xib in Resources */,
 				E6A265DC2793341300AA001A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -252,9 +311,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6FD1E9A27F388D0001BE877 /* MapConstants.swift in Sources */,
+				E632BD8D2815D1D0009E21A7 /* RestaurantCardsView.swift in Sources */,
+				E632BD992815DA16009E21A7 /* IndividualRestaurantViewModel.swift in Sources */,
 				E6A265D92793341300AA001A /* ViewController.swift in Sources */,
 				E6FD1EA227F3A5BE001BE877 /* Location.swift in Sources */,
+				E632BD9C2815E308009E21A7 /* GMSMarkerExtension.swift in Sources */,
+				E632BD84281082C9009E21A7 /* ThemeConstants.swift in Sources */,
 				E6A265D52793341300AA001A /* AppDelegate.swift in Sources */,
+				E632BD922815D405009E21A7 /* RestauarantCard.swift in Sources */,
 				E6083CF42794554600E5A5BF /* UIView+Extensions.swift in Sources */,
 				E632BD82280DEDB9009E21A7 /* HelperFunctions.swift in Sources */,
 				E632BD80280DED0C009E21A7 /* MockDataConstants.swift in Sources */,

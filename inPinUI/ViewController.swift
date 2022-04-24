@@ -11,7 +11,8 @@ import CoreLocation
 class ViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDelegate {
     @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var addressLabel: UITextField!
-    var restaurantList: [Restaurant]?
+    @IBOutlet weak var restaurantCards: RestaurantCardsView!
+    var restaurantList: [IndividualRestaurantViewModel]?
     var currentMapCenter: CLLocationCoordinate2D?
     
     struct Position: Decodable {
@@ -25,6 +26,8 @@ class ViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDeleg
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addressLabel.backgroundColor = gray
+        addressLabel.textColor = black
         //mapView.setMinZoom(14, maxZoom: 20)
         let NYC = GMSCameraPosition.camera(
             withLatitude: 40.758896,
@@ -112,17 +115,29 @@ class ViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDeleg
         parseMarkerData(data: data)
     }
     func makeMarkers(restaurants: [Restaurant]){
-        mapView.clear()
-        var i = 0
-        for pos in restaurants {
-            let position = CLLocationCoordinate2D(latitude: pos.location.coordinates[1], longitude: pos.location.coordinates[0])
-            let marker = GMSMarker(position: position)
-            marker.title = pos.name
-            marker.icon = UIImage(named: MapConstants.iconMap[i] ?? "grey")
-            marker.setIconSize(scaledToSize: .init(width: 30, height: 48))
-            marker.map = mapView
-            i+=1
+        DispatchQueue.main.async {
+            self.mapView.clear()
+            var i = 0
+            self.restaurantList = []
+            for pos in restaurants {
+                let position = CLLocationCoordinate2D(latitude: pos.location.coordinates[1], longitude: pos.location.coordinates[0])
+                let marker = GMSMarker(position: position)
+                let restaurantCardElement = self.setupRestaurantCard(pos)
+                marker.title = pos.name
+                marker.icon = UIImage(named: MapConstants.iconMap[i] ?? "grey")
+                marker.yelpID = pos.yelpId
+                marker.setIconSize(scaledToSize: .init(width: 30, height: 48))
+                marker.map = self.mapView
+                self.restaurantList?.append(IndividualRestaurantViewModel(restaurant: pos, restaurantCardView: restaurantCardElement, restaurantMarker: marker))
+                i+=1
+            }
+            
         }
+    }
+    func setupRestaurantCard(_ currentElement: Restaurant) -> RestauarantCard{
+        let newRestaurantCard =  RestauarantCard(restaurantInfo: currentElement,frame:CGRect(x: 0, y: 0, width:179, height: 179))
+
+        return newRestaurantCard
     }
     
     func parseMarkerData(data:Data){
@@ -130,7 +145,7 @@ class ViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDeleg
             if let restaurants = try? JSONDecoder().decode([Restaurant].self,from:data){
                 //                              print(restaurants)
                 
-                self.restaurantList = restaurants
+//                self.restaurantList = restaurants
                 makeMarkers(restaurants: restaurants)
             }
         } catch let error {

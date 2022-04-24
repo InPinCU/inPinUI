@@ -26,3 +26,4 @@ struct Restaurant:Decodable{
     let updatedAt:String
 //    let isClosed:String?
 }
+
