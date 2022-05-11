@@ -7,6 +7,7 @@
 import UIKit
 import GoogleMaps
 import CoreLocation
+import GooglePlaces
 
 class ViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDelegate {
     @IBOutlet weak var mapView: GMSMapView!
@@ -14,6 +15,21 @@ class ViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDeleg
     @IBOutlet weak var restaurantCards: RestaurantCardsView!
     var restaurantList: [IndividualRestaurantViewModel]?
     var currentMapCenter: CLLocationCoordinate2D?
+    
+    /* MARK: Code for adding autocomplete */
+    @IBAction func TopBarValueChanged(_ sender: Any) {
+        let acController = GMSAutocompleteViewController()
+        acController.primaryTextColor = UIColor.lightGray
+        acController.secondaryTextColor = UIColor.darkGray
+        acController.primaryTextHighlightColor = UIColor.white
+        acController.tableCellSeparatorColor = UIColor.darkGray
+        acController.tableCellBackgroundColor = UIColor.black
+        
+        
+           
+        acController.delegate = self
+        present(acController, animated: true, completion: nil)
+    }
     
     struct Position: Decodable {
         let lat: Float64
@@ -26,9 +42,14 @@ class ViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDeleg
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        addressLabel.backgroundColor = gray
-        addressLabel.textColor = black
-        //mapView.setMinZoom(14, maxZoom: 20)
+        
+        let searchBarTextAttributes: [NSAttributedString.Key : AnyObject] = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        
+        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).defaultTextAttributes = searchBarTextAttributes
+
+        addressLabel.backgroundColor = searchBarGray
+        addressLabel.textColor = UIColor.white
+        mapView.setMinZoom(14, maxZoom: 20)
         let NYC = GMSCameraPosition.camera(
             withLatitude: 40.758896,
             longitude: -73.985130,
@@ -236,3 +257,32 @@ class ViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDeleg
 }
 
 
+extension ViewController: GMSAutocompleteViewControllerDelegate {
+
+  // Handle the user's selection.
+  func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
+    print("Place name: \(place.name)")
+    print("Place address: \(place.formattedAddress)")
+    print("Place attributions: \(place.attributions)")
+      
+    let chosenLocation = GMSCameraPosition.camera(
+        withLatitude: place.coordinate.latitude,
+        longitude:place.coordinate.longitude,
+          zoom: 16
+      )
+    mapView.camera = chosenLocation
+    dismiss(animated: true, completion: nil)
+  }
+
+  func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
+    // TODO: handle the error.
+    print("Error: \(error)")
+    dismiss(animated: true, completion: nil)
+  }
+
+  // User cancelled the operation.
+  func wasCancelled(_ viewController: GMSAutocompleteViewController) {
+    print("Autocomplete was cancelled.")
+    dismiss(animated: true, completion: nil)
+  }
+}
